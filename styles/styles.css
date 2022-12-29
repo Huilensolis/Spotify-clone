@@ -1,0 +1,393 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+button{
+    cursor: auto;
+}
+body{
+    font-size: 62.5%;
+    font-family: sans-serif;
+    line-height: 1.6;
+}
+.container-n1{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 393px 1fr;
+    grid-template-rows: 60px 1fr 90px;
+    position: fixed;
+}
+/* aside menu nav */
+.aside-nav{
+    background-color: #000;
+    grid-area: 1 / 1 / 3 / 2;
+    display: flex;
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+    .menu{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 30px 1fr;
+        grid-template-rows: 10px 1fr 10px repeat(3, 30px) 20px 30px 30px;
+        gap: 10px;
+        align-items: center;
+        justify-items: start;
+        margin-left: 24px;
+    }
+    figure img{
+        width: 8.5rem;
+    }
+    .menu figure{
+        grid-area: 2 / 1 / 3 / 4;
+    }
+    /* icons */
+        .home-icon{
+            fill: white;
+            grid-area: 4/ 1;
+        }
+        .menu div, .menu h1{
+            cursor: pointer;
+        }
+            .home-icon h1{
+                grid-area: 4 / 3 / 4 / 5;
+            }
+        .lens-icon{
+            fill:hsl(0deg 0% 100% / 70%);
+            grid-area: 5 / 1;
+        }
+        .library-icon{
+            fill:hsl(0deg 0% 100% / 70%);
+            grid-area: 6 / 1;
+        }
+        .heart-icon{
+            background-image: linear-gradient(135deg,#450af5,#c4efd9);
+            fill:hsl(0deg 0% 100% / 70%);
+        }
+        .add-icon{
+            background-color: hsl(0deg 0% 100% / 70%);
+            grid-area: 8 / 1;
+        }
+        .heart-icon{
+            grid-area: 9 / 1;
+        }
+        .heart-icon, .add-icon{
+            width: 24px;
+            height: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 4px;
+            border-radius: 2px;
+        }
+            /* icons text */
+            .menu h1{
+                color:hsl(0deg 0% 100% / 70%);
+                font-size: 0.8rem;
+                font-weight: 700;
+            }
+            h1.home-text{
+                color: white;
+                grid-area: 4 / 2 / 4 / 4;
+            }
+            .lens-text{
+                grid-area: 5/ 2;
+            }
+            .library-text{
+                grid-area: 6/ 2;
+            }
+            .create-list-text{
+                grid-area: 8/ 2;
+            }
+            .songs-you-like-text{
+                grid-area: 9/ 2;
+            }
+/* aside nav menu footer */
+.nav-footer{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    margin-left: 24px;
+    margin-bottom: 32px;
+}
+.nav-footer a{
+    color:hsl(0deg 0% 100% / 70%);
+    font-size: 0.7rem;
+    text-decoration: none;
+}
+.nav-footer a:hover{
+    text-decoration: underline;
+}
+.top-header{
+    background-color: #1E1E1E;
+    grid-area: 1/ 2 / 1/ 3;
+}
+/* main content */
+/* set parents grid etc */
+.main-content{
+    background-color: #1C1C1C;
+    grid-area: 1 / 2 / 3 / 2;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 64px 1fr;
+    overflow: auto;
+    scroll-snap-type: y proximity;
+}
+.main-content header{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    background-color: rgba(0,0,0,.5);
+    padding: 16px 32px;
+    align-content: center;
+}
+.main-content .header-container{
+    height: 100%;
+    width: 100%;
+    grid-area: 1 / 1 / 1 / 3;
+}
+    /* set cchildren s on grid  */
+    .header-pagetravel-buttons{
+        display: grid;
+        grid-template-columns: auto auto 1fr;
+        grid-area: 1 / 1 / 1 / 2;
+        align-items: center;
+        justify-items: start;
+        gap: 16px;
+    }
+        /* set both header pagetravel buttons  */
+        .header-button{
+            width: 32px;
+            height: 32px;
+            background-color: rgba(0,0,0,.7);
+            border: none;
+            border-radius: 50%;
+            cursor: not-allowed;
+        }
+        .header-button svg{
+            fill: #b3b3b3;
+        }
+    /* set buttons parent */
+    .header-items{
+        display: flex;
+        flex-direction: row;
+        grid-area: 1 / 2 / 1 / 3;
+        gap: 0.9rem;
+        justify-content: end;
+        align-items: center;
+    }
+    .header-item{
+        padding: 0;
+        color: #b3b3b3;
+        background-color: transparent;
+        border: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 1.76px;
+    }
+    /* header general item hover */
+    .header-item:hover{
+        transform: scale(1.04);
+        color: white;
+    }
+    .sign-in::before{
+        content: '';
+        display: grid;
+        width: 1px;
+        height: 28px;
+        padding: 0;
+        margin: 0;
+        background-color: white;
+        margin-right: 2rem;
+        margin-left: 1.1rem;
+    }
+    .sign-in{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 16px;
+        min-width: 69.15px;
+        letter-spacing: normal;
+    }
+    #header-special-button{
+        font-size: 1rem;
+        padding: 16px 32px;
+        background-color: white;
+        color: #1E1E1E;
+        max-height: 48px;
+        min-width: 136px;
+        border-radius: 24px;
+        letter-spacing: normal;
+    }
+    /* special button hover */
+    #header-special-button:hover{
+        transform: scale(1.04);
+    }
+/* song player */
+.song-player{
+    background-color: #181818;
+    display: grid;
+    grid-area: 3 / 1 / 3/ 3;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+    /* song line */
+    .song-line-container{
+        grid-area: 1 / 2/ 1/ 3;
+        display: grid;
+        grid-template-columns: 1fr repeat(5, 32px) 1fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 16px;
+        padding: 20px 0 10px 0;
+        justify-items: center;
+        align-items: center;
+    }
+    /* song line incos */
+        /* set icons color */
+        .song-line-container figure svg{
+            fill:hsla(0,0%,100%,.3);
+        }
+        /* place icons */
+            .mix-botton{
+                grid-area: 1 / 2/ 1 / 3;
+            }
+            .before-botton{
+                grid-area: 1 / 3 / 1 / 4;
+            }
+            .pause-botton{
+                grid-area: 1 / 4 / 1 / 5;
+                background-color: hsla(0,0%,100%,.3);
+                border-radius: 50%;
+                width: 32px;
+                height: 32px;
+                display: grid;
+                align-items: center;
+                justify-content: center;
+            }
+            /* pause button hover */
+            .pause-botton:hover{
+                transform: scale(1.06);
+            }
+                .pause-botton:hover{
+                    width: 34px;
+                }
+             .song-line-container .pause-botton svg{
+                fill: #181818;
+             }
+            .after-botton{
+                grid-area: 1 / 5 / 1 / 6;
+            }
+            .repeat-botton{
+                grid-area: 1 / 6 / 1 / 7;
+            }
+
+        /* playline */
+        .play-line{
+            grid-area: 2/ 1 / 2 / 8;
+            display: grid;
+            /* grid-template-columns: 1fr repeat(8, 32px) 1fr; */
+            grid-template-columns: 1fr repeat(1, minmax(200px, 600px)) 1fr;
+            grid-template-rows: 1fr;
+            column-gap: 16px;
+            align-items: center;
+        }
+            /* place and creating icons */
+            .left-time{
+                grid-area: 1 / 1 ;
+                color:hsla(0,0%,100%,.3);
+            }
+            .song-line{
+                grid-area: 1 / 2 / 1 / 3;
+                background-color:hsla(0,0%,100%,.3);
+                height: 4px;
+                border-radius: 2px;
+                width: 100%;
+            }
+            .right-time{
+                grid-area: 1 / 3 / 1 / 4;
+                color:hsla(0,0%,100%,.3);
+            }
+    /* volume bar */
+    .volume-bar{
+        grid-area: 1 / 3 / 1/ 4;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 20px;
+        gap: 16px;
+    }
+        .volume-icon{
+            display: flex;
+            fill: hsl(0deg 0% 100% / 70%);
+        }
+        .volume-line{
+            width: 94px;
+            height: 16px;
+            /* height: 4px; */
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+        .volume-line figure{
+            width: 100%;
+            height: 4px;
+            background-color: white;
+            border-radius: 2px;
+        }
+/* update to premium ad */
+.update-premium{
+    background-color: red;
+    grid-area: 2 / 1 / 3/ 3;
+    height: auto;
+    width: calc(100% - 240px);
+    right: 0;
+    bottom: 90px;
+    position: fixed;
+    z-index: 2;
+    text-align: left;
+    padding: 11px 24px 7px 15px;
+    color: white;
+    background-image: linear-gradient(90deg,#af2896,#509bf5);
+    display: flex;
+    /* grid-template-columns: 1fr 220px;
+    column-gap: 24px; */
+    align-items: center;
+    font-weight: 600;
+    cursor: pointer;
+    }
+    /* get 3 free months button */
+    .update-premium button{
+        max-width: 250px;
+        min-width: 250px;
+        background-color: white;
+        color: black;
+        height: 45px;
+        border: none;
+        border-radius: 24px;
+        font-size: 0.5rem;
+        margin-left: 24px;
+    }
+    .update-premium button h1{
+        font-size: 1rem;
+    }
+    /* text */
+    .text-conainer{
+        font-size: 1rem;
+        display: inline-block;
+        margin-block: 0;
+        font-weight: 600;
+    }
+    /* terms and conditions text */
+    .text-conainer a{
+        color: inherit;
+        text-decoration: none;
+    }
+    .text-conainer a:hover{
+        text-decoration: underline;
+    }
