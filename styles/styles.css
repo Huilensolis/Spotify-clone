@@ -52,27 +52,49 @@ body{
         align-items: center;
         justify-content: center;
         grid-area: 4 /1 / 5 / 1;
+        cursor: pointer;
     }
     .aside-menu-icons svg, .aside-menu-icons figure{
         grid-column: 1;
     }
     /* aside menu text */
-    .aside-menu-text-container{
+    .aside-menu-container{
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, 30px) 20px 30px 30px;
         gap: 10px;
-        grid-column: 2;
         grid-row: 4;
         align-items: center;
+        justify-content: start;
+        cursor: pointer;
     }
-    .aside-menu-text-container h1{
-        grid-column: 1;
+    .aside-menu-container div h1{
+        grid-column: 2;
         color:hsl(0deg 0% 100% / 70%);
         font-size: 0.8rem;
         font-weight: 700;
     }
-    .aside-menu-text-container h1:first-child{
+    .aside-menu-container div svg{
+        grid-column: 1;
+    }
+        /* set the empty track */
+        .aside-menu-container div{
+            display: grid;
+            grid-template-columns: min-content max-content;
+            align-items: end;
+            gap: 10px;
+        }
+    /* menu */
+    /* general hover */
+    .aside-menu-container div:hover > h1, .aside-menu-container div:hover > svg:not(.list, .add-icon){
+        color: rgb(255, 255, 255);
+        fill: white;
+    }
+    .aside-menu-container .list:hover > .add-icon{
+        background-color: rgb(255, 255, 255);
+    }
+    /* icons color */
+    .aside-menu-container>:first-child h1{
         color: rgb(255, 252, 252);
     }
         .home-icon{
