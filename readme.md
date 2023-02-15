@@ -1,6 +1,6 @@
 # Spotify clone
 I have made this project to practice my CSS Grid use. Only HTML & CSS.
-Here is the original spotify pageHere is the original spotify page: https://open.spotify.com/ (they updated it a little bit, so my clone its not exact as the original web)
+Here is the original spotify page: https://open.spotify.com/ (they updated it a little bit, so my clone its not exact as the original web)
 
 ## the playlist icon art images have been taken from:
 
